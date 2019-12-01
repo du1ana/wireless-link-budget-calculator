@@ -23,7 +23,7 @@ function Calculate(inputForm){
 
   var result,result2;
 
-  result="".concat("<u>Results:</u><br/>Equivalent Isotropic Padiated Power:<b>",eirp,inputForm.ptxUnit.value,"</b><br/>",
+  result="".concat("<u>Results:</u><br/>Equivalent Isotropic Radiated Power:<b>",eirp,inputForm.ptxUnit.value,"</b><br/>",
   "Free Space Path Loss:<b>",fspl,inputForm.lfsUnit.value,"</b><br/>"
   ,"Received Signal Strength:<b>",rss,inputForm.ptxUnit.value,"</b><br/> ");
 
