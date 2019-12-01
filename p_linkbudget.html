@@ -1,0 +1,138 @@
+</<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Wireless Link Budget Calculator</title>
+
+    <style>
+      .gain{
+        color: #0b9220 ;
+        width:200px;
+      }
+
+      .loss{
+        color: #920b0b ;
+        width:200px;
+      }
+      input{
+        text-align: right;
+        width: 55px;
+      }
+      option{
+        width: 30px;
+      }
+    </style>
+
+  </head>
+
+
+  <body bgcolor="#ddd">
+
+
+<form name="=valueInputForm">
+
+<h1>Wireless Link Budget Calculator</h1>
+<h3>Transmitter Side:</h3>
+  <table>
+  <tr>
+    <td><p>Transmitter Power Output:
+    <td><input type="number" name="ptx" style="text-align:right"/>
+    <td><select name="ptxUnit">
+      <option>dB</option>
+      <option>dBm</option>
+    </select>
+  </tr>
+  <tr>
+    <td class="loss">Transmitter Filter Loss:
+    <td><input type="number" name="filter_ltx"/>
+    <td><select name="filter_ltxUnit">
+      <option>dB</option>
+    </select>
+  </tr>
+  <tr>
+    <td class="loss">Jumper Loss:
+    <td><input type="number" name="jumper_ltx"/>
+    <td><select name="jumper_ltxUnit">
+      <option>dB</option>
+    </select>
+  </tr>
+  <tr>
+    <td class="loss">Transmitter Feedline Loss:
+    <td><input type="number" name="feedline_ltx"/>
+    <td><select name="feedline_ltxUnit">
+      <option>dB</option>
+    </select>
+  </tr>
+  <tr>
+    <td class="gain">Transmitter Antenna Gain:
+    <td><input type="number" name="gtx"/>
+    <td><select name="gtxUnit">
+      <option>dB</option>
+    </select>
+  </tr>
+</table>
+
+<h3>Free space:</h3>
+<table>
+<tr>
+  <td class="loss">Path Loss:
+  <td><input type="number" name="lfs"/>
+  <td><select name="lfsUnit">
+    <option>dB</option>
+  </select>
+</tr>
+<tr>
+  <td class="loss">Other Losses:
+  <td><input type="number" name="lm"/>
+  <td><select name="lmUnit">
+    <option>dB</option>
+  </select>
+</tr>
+</table>
+
+<h3>Reciever Side:</h3>
+  <table>
+  <tr>
+    <td class="gain">Reciever Antenna Gain:
+    <td><input type="number" name="grx"/>
+    <td><select name="grxUnit">
+      <option>dB</option>
+    </select>
+  </tr>
+  <tr>
+    <td class="loss">Receiver Filter Loss:
+    <td><input type="number" name="filter_lrx"/>
+    <td><select name="filter_lrxUnit">
+      <option>dB</option>
+    </select>
+  </tr>
+  <tr>
+    <td class="loss">Receiver Feedline Loss:
+    <td><input type="number" name="feedline_lrx"/>
+    <td><select name="feedline_lrxUnit">
+      <option>dB</option>
+    </select>
+  </tr>
+  <tr>
+    <td>Receiver Sensitivity:
+    <td><input type="number" name="srx"/>
+    <td><select name="srxUnit">
+      <option>dB</option>
+      <option>dBm</option>
+    </select>
+  </tr>
+</table>
+  </form>
+    <div>
+
+    </div>
+    <script src="script.js"></script>
+    <div>
+      <button onclick="Calculate(document.forms[0])">Calculate</button>
+    </div>
+
+    <p id="result"/>
+    <p id="result2"/>
+
+  </body>
+</html>
